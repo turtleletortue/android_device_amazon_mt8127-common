@@ -364,6 +364,12 @@ on post-fs-data
     chown system /sys/devices/platform/msensor/driver/cpsopmode
     chown system /sys/devices/platform/msensor/driver/cpsreptxy
     chown system /sys/devices/platform/msensor/driver/cpsreptz
+    
+    # Accdet
+    chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
+
+    # kpd
+    chown radio radio /sys/devices/platform/mtk-kpd/driver/kpd_call_state
 
     chown system system /system/bin/sbchk
     chmod 0771 /system/bin/sbchk
