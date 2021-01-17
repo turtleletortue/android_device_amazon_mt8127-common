@@ -49,17 +49,38 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_COMMON)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(DEVICE_COMMON)/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg
 
+# ABI fixes for old binaries
+PRODUCT_PACKAGES += \
+	libshim_libbinder \
+	libshim_liblog \
+	libshim_libwvm \
+    libshim_libcamera \
+    libshim_skia \
+    libshim_gui
+
 # Audio
 PRODUCT_PACKAGES += \
-	audio.a2dp.default
+	audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.stub \
+    libalsautils \
+    libaudio-resampler \
+    libtinyalsa \
+    libtinycompress \
+    libtinyxml
     
 # Bluetooth
 PRODUCT_PACKAGES += \
 	bluetooth.default
-	
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.mt8127
+
+# Graphics
+PRODUCT_PACKAGES += \
+    libion
 
 # Power
 PRODUCT_PACKAGES += \
@@ -74,9 +95,14 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
-# root access
+# Wifi
 PRODUCT_PACKAGES += \
-	su
+    lib_driver_cmd_mt66xx \
+    libwifi-hal-mt66xx \
+    wifi_hal \
+    libwpa_client \
+    hostapd \
+    wpa_supplicant
 
 WITH_EXFAT := true
 
