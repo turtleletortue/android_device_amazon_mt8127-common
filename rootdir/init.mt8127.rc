@@ -12,12 +12,9 @@ on init
     mkdir /storage/usbotg 0700 root root
     mount tmpfs tmpfs /storage/usbotg mode=0755,uid=1000,gid=1000
 
-    symlink /sdcard /storage/sdcard0
-    symlink /storage/usbdisk /mnt/usbdisk
-
-    export EXTERNAL_STORAGE /sdcard
-
-
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    
     # Backward compatibility
     symlink /system/etc /etc
     symlink /sys/kernel/debug /d
@@ -175,6 +172,9 @@ on fs
     setprop ro.crypto.fuse_sdcard true
 
 on post-fs
+    # Support legacy paths
+    symlink /sdcard /storage/sdcard0
+
     # Turn on swap
     swapon_all /fstab.mt8127
 
