@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	bluetooth.default
 	
+# Lights
+PRODUCT_PACKAGES += \
+    lights.mt8127
+
 # Power
 PRODUCT_PACKAGES += \
 	power.default
