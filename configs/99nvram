@@ -1,0 +1,6 @@
+#!/system/bin/sh
+mkdir -p /data/nvram/APCFG/APRDEB
+cp /system/etc/nvram/WIFI /data/nvram/APCFG/APRDEB/WIFI
+cp /system/etc/nvram/WIFI_CUSTOM /data/nvram/APCFG/APRDEB/WIFI_CUSTOM
+chmod 0660 /data/nvram/APCFG/APRDEB/WIFI
+chmod 0660 /data/nvram/APCFG/APRDEB/WIFI_CUSTOM

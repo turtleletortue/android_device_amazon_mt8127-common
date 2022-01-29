@@ -6,7 +6,9 @@ DEVICE_PACKAGE_OVERLAYS += $(DEVICE_COMMON)/overlay
 
 # Install init.d scripts
 PRODUCT_COPY_FILES += \
-    $(DEVICE_COMMON)/configs/99exfat-support:system/etc/init.d/99exfat-support
+    $(DEVICE_COMMON)/configs/99exfat-support:system/etc/init.d/99exfat-support \
+    $(DEVICE_COMMON)/configs/99nvram:system/etc/init.d/99nvram
+
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -50,6 +52,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_COMMON)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(DEVICE_COMMON)/media/media_profiles.xml:system/etc/media_profiles.xml \
     $(DEVICE_COMMON)/media/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg
+
+# WiFi nvram
+PRODUCT_COPY_FILES += \
+    $(DEVICE_COMMON)/nvram/WIFI:system/etc/nvram/WIFI \
+    $(DEVICE_COMMON)/nvram/WIFI_CUSTOM:system/etc/nvram/WIFI_CUSTOM
 
 # ABI fixes for old binaries
 PRODUCT_PACKAGES += \
