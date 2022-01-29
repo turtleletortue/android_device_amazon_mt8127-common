@@ -97,14 +97,12 @@ lib/libcam.camshot.so
 lib/libcam.client.so
 lib/libcam.device1.so
 lib/libcam.exif.so
-lib/libcam.paramsmgr.so
 lib/libcam.utils.sensorlistener.so
 lib/libcam.utils.so
 lib/libcamalgo.so
 lib/libcamdrv.so
 lib/libcamera_client_mtk.so
 lib/libcameraanalyzer.so
-lib/libcameracustom.so
 lib/libcustom_nvram.so
 lib/libcvsd_mtk.so
 -lib/libdpframework.so
